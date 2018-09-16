@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server index.js"
+    "start": "webpack-dev-server index.js",
+    "build": "webpack --mode production"
   },
   "repository": "https://github.com/bharaninb/portfolio.git",
   "author": "Bharani <bharanidharan.nb@gmail.com>",
