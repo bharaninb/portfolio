@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server index.js",
-    "build": "webpack-dev-server index.js --mode production"
+    "build": "webpack --mode production"
   },
   "repository": "https://github.com/bharaninb/portfolio.git",
   "author": "Bharani <bharanidharan.nb@gmail.com>",
