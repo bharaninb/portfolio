@@ -6,9 +6,7 @@ const config = {
     './index.js',
   ],
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-      filename: 'bundle.js',
+    filename: 'dist/bundle.js',
   },
   module: {
     rules: [
