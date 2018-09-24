@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HomePage from './src/homepage.js';
+import HomePage from './homepage.js';
 
 const element = (
     <div>
