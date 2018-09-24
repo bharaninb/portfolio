@@ -1,6 +1,7 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+import HomePage from './src/homepage.js';
 
 const element = (
     <div>
@@ -10,6 +11,6 @@ const element = (
 );
 
 ReactDOM.render(
-    element,
+    <HomePage />,
     document.getElementById("root")
 );

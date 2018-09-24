@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server index.js",
+    "start": "webpack-dev-server index.js --mode development",
     "build": "webpack --mode production"
   },
   "repository": "https://github.com/bharaninb/portfolio.git",
@@ -11,8 +11,10 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "css-loader": "^1.0.0",
     "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "react-dom": "^16.5.1",
+    "style-loader": "^0.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.1",
