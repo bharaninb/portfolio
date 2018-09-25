@@ -8,8 +8,8 @@ class Balloon2 extends React.Component {
       rotate: 0,
       translateY: 0,
       translateX: 0,
-      left: 0,
-      top: 0,
+      left: props.position.left - 60,
+      top: props.position.top - 70,
       width: 120,
       height: 140,
     }

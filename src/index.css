@@ -71,7 +71,8 @@
 	z-index: 9;
 }
 .intro-inner .intro-content .profile-img img {
-  max-width: 100%;
+	max-width: 100%;
+	cursor: pointer;
 }
 .intro-inner .intro-content h2 {
 	font-family: "Poppins", sans-serif;

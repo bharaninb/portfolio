@@ -9,14 +9,18 @@ class HomePage extends React.Component {
     this.imgClick.bind(this);
     this.makeNewPosition.bind(this);
     this.state = {
-      showBalloon: false
+      showBalloon: false,
+      imgPosition: {
+        top: 0,
+        left: 0
+      }
     }
   }
 
   render() {
     return (
       <div>
-        {this.state.showBalloon ? <Balloon2 ref="bal" /> : null}
+        {this.state.showBalloon ? <Balloon2 ref="bal" position={this.state.imgPosition} /> : null}
         <section className="intro-section fix">
           <div className="intro-bg bg-cms"></div>
           <div className="intro-inner">
@@ -35,7 +39,11 @@ class HomePage extends React.Component {
 
   imgClick(event) {
     this.setState({
-      showBalloon: true
+      showBalloon: true,
+      imgPosition: {
+        top: event.clientY,
+        left: event.clientX
+      }
     }, this.animateBalloon);
   }
 
