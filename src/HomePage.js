@@ -1,87 +1,60 @@
 import React from 'react';
 import './index.css';
-import Balloon from './Balloon.js';
-import Balloon2 from './Balloon2.js';
+import PortfolioContainer from './Portfolio/';
+import ContactContainer from './Contact';
+import FooterContainer from './Footer';
+import ImageContainer from './ProfileImage';
+import Typing from './Typed';
+import CanvasContainer from './SketchContainer';
 
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.imgClick.bind(this);
-    this.makeNewPosition.bind(this);
     this.state = {
-      showBalloon: false,
-      imgPosition: {
-        top: 0,
-        left: 0
-      }
-    }
+      footerHeight: 0,
+      words: ['I\'m Bharanidharan ', 'Full Stack Javascript Developer ', 'From India '],
+    };
+  }
+
+  updateFooterHeight = (height) => {
+    this.setState({
+      footerHeight: height,
+    });
   }
 
   render() {
     return (
-      <div>
-        {this.state.showBalloon ? <Balloon2 ref="bal" position={this.state.imgPosition} /> : null}
+      <React.Fragment>
+        {/* <header className="header-section">
+          <div className="logo">
+            <img src="img/logo.png" alt="" />
+          </div>
+          <div className="responsive"><i className="fa fa-bars" /></div>
+          <ul className="menu-list" style={{ display: 'none' }}>
+            <li className="current"><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#service">service</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </header> */}
         <section className="intro-section fix">
-          <div className="intro-bg bg-cms"></div>
+          <div className="intro-bg bg-cms" />
           <div className="intro-inner">
             <div className="intro-content">
-              <div id="round"></div>
-              <div className="profile-img" onClick={this.imgClick.bind(this)}>
-                <img src="/bharani.jpg" alt="Bharani" />
-              </div>
-              <h2><span className="element">I'm Bharanidharan</span></h2>
+              <CanvasContainer />
+              <ImageContainer />
+              <h2><Typing words={this.state.words} /></h2>
             </div>
           </div>
         </section>
-      </div>
+        <main className="main-warp" style={{ marginBottom: `${this.state.footerHeight}px` }}>
+          <PortfolioContainer />
+          <ContactContainer />
+        </main>
+        <FooterContainer updateFooterHeight={this.updateFooterHeight} />
+      </React.Fragment>
     );
-  }
-
-  imgClick(event) {
-    this.setState({
-      showBalloon: true,
-      imgPosition: {
-        top: event.clientY,
-        left: event.clientX
-      }
-    }, this.animateBalloon);
-  }
-
-  animateBalloon() {
-    let balloon = this.refs.bal;
-
-    let timeInterval;
-    timeInterval = setInterval(() => {
-      let newPos = this.makeNewPosition();
-      let rotationAngle = this.findRotationAngle([balloon.state.left, balloon.state.top], newPos);
-
-      balloon.changePosition(newPos[0], newPos[1], rotationAngle);
-
-      if (balloon.state.width <= 2) {
-        clearInterval(timeInterval);
-        this.setState(state => ({
-          showBalloon: false
-        }));
-      }
-
-    }, 200);
-  }
-
-  makeNewPosition() {
-
-    let balloon = this.refs.bal;
-    const h = window.innerHeight - balloon.state.height;
-    const w = window.innerWidth - balloon.state.width;
-
-    const nh = Math.floor(Math.random() * h);
-    const nw = Math.floor(Math.random() * w);
-
-    return [nh, nw];
-  }
-
-  findRotationAngle(oldPosition, newPosition) {
-    const angleDeg = Math.atan2(newPosition[1] - oldPosition[1], newPosition[0] - oldPosition[0]) * 180 / Math.PI;
-    return angleDeg;
   }
 }
 

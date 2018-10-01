@@ -1,0 +1,40 @@
+.footer-section {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	background: url("/images/p-dark.png");
+	text-align: center;
+	padding: 70px 0;
+	z-index: 2;
+}
+.footer-section .social-links {
+	margin-bottom: 25px;
+}
+.footer-section .social-links a {
+	display: inline-table;
+	text-align: center;
+	height: 35px;
+	width: 35px;
+	color: #fff;
+	margin: 0 5px;
+}
+.footer-section .social-links a svg {
+	height: 100%;
+}
+.footer-section .social-links a.facebook {
+	background: #2D5DA1;
+}
+.footer-section .social-links a.twitter {
+	background: #1AB1E5;
+}
+.footer-section .social-links a.behance {
+	background: #2A71F3;
+}
+.footer-section .social-links a.dribbble {
+	background: #DF7EA5;
+}
+.footer-section p {
+	font-size: 14px;
+	margin-bottom: 0;
+	line-height: normal;
+}

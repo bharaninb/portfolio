@@ -1,0 +1,115 @@
+.portfolio-section {
+	background: #fff;
+}
+.portfolio-filter {
+	list-style: none;
+	text-align: center;
+}
+.portfolio-filter li {
+	display: inline-block;
+	margin: 0 5px;
+	font-size: 13px;
+	padding: 3px 0;
+	cursor: pointer;
+	border-color: transparent;
+	border: 1px solid transparent;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+.portfolio-filter li.active {
+	background: #fff;
+	padding: 3px 12px;
+	border-radius: 20px;
+	border-color: #ddd;
+}
+.isotope_items {
+	margin-bottom: -30px;
+}
+.work-item-content {
+	position: relative;
+	display: block;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #F1F3F6;
+  float: left;
+  width: 100%;
+}
+.work-item-content h2 {
+  font-size: 20px;
+  float: left;
+  display: inline-block;
+}
+.work-item-content .links {
+  float: right;
+  margin: 0;
+}
+.work-item-content .links a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 10px;
+  color: black;
+}
+
+.work-item {
+	position: relative;
+	display: block;
+	margin-bottom: 0px;
+}
+.work-item img {
+	min-width: 100%;
+}
+.work-item .work-inner {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: transparent;
+	z-index: 1;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}
+.work-item .work-inner .work-info {
+	position: relative;
+	text-align: center;
+	top: 40%;
+	margin-top: -28px;
+}
+.work-item .work-inner .work-info h2 {
+	color: #fff;
+	font-size: 20px;
+	margin-bottom: 9px;
+	opacity: 0;
+	position: relative;
+	top: -40px;
+	-webkit-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	transition: all 0.2s ease 0s;
+}
+.work-item .work-inner .work-info h3 {
+	color: #333;
+	font-size: 12px;
+	display: inline-block;
+	background: #fff;
+	padding: 6px 20px;
+	border-radius: 20px;
+	opacity: 0;
+	position: relative;
+	top: 40px;
+	-webkit-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  margin: 5px;
+}
+.work-item:hover .work-inner {
+	background: rgba(0, 0, 0, 0.8);
+}
+.work-item:hover .work-inner .work-info h2, .work-item:hover .work-inner .work-info h3 {
+	opacity: 1;
+	top: 0;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	transition: all 0.4s ease 0s;
+}

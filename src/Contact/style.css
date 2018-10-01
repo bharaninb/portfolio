@@ -1,0 +1,23 @@
+.contact-section {
+  /* background: url("/images/p-dark.png"); */
+}
+
+.contact-info {
+	text-align: center;
+}
+.contact-info svg {
+	width: 100%;
+	border-radius: 100px;
+	margin-bottom: 20px;
+	font-size: 70px;
+	position: absolute;
+	left: 30%;
+	top: -15px;
+	z-index: -1;
+	opacity: 0.2;
+	color: #9c9c9c;
+}
+.contact-info p {
+	font-size: 14px;
+	line-height: 20px;
+}
