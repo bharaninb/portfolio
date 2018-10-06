@@ -6,6 +6,7 @@ import FooterContainer from './Footer';
 import ImageContainer from './ProfileImage';
 import Typing from './Typed';
 import CanvasContainer from './SketchContainer';
+import HeaderContainer from './Header';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -25,20 +26,8 @@ class HomePage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <header className="header-section">
-          <div className="logo">
-            <img src="img/logo.png" alt="" />
-          </div>
-          <div className="responsive"><i className="fa fa-bars" /></div>
-          <ul className="menu-list" style={{ display: 'none' }}>
-            <li className="current"><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#service">service</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </header> */}
-        <section className="intro-section fix">
+        <HeaderContainer />
+        <section className="intro-section fix" id="home">
           <div className="intro-bg bg-cms" />
           <div className="intro-inner">
             <div className="intro-content">
