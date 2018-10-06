@@ -18,17 +18,17 @@ export default class ImageContainer extends Component {
       left: 0,
     },
     size: {
-      width: 120,
-      height: 120,
+      width: 160,
+      height: 160,
     },
   };
 
-  onMouseDown = (event) => {
+  onMouseDown = () => {
     this.setState({
       showBalloon: true,
       position: {
-        top: event.clientY - 70,
-        left: event.clientX - 80,
+        left: this.img.offsetLeft - 35,
+        top: this.img.offsetTop - 30,
       },
     }, () => {
       this.timer = setInterval(this.increaseBalloonSize, 100);
@@ -82,8 +82,8 @@ export default class ImageContainer extends Component {
           left: 0,
         },
         size: {
-          width: 120,
-          height: 120,
+          width: 160,
+          height: 160,
         },
       });
     }
@@ -92,7 +92,11 @@ export default class ImageContainer extends Component {
   increaseBalloonSize = () => {
     this.setState(state => ({
       rotate: state.rotate,
-      position: state.position,
+      // position: state.position,
+      position: {
+        top: state.position.top - 5,
+        left: state.position.left - 5,
+      },
       size: {
         width: state.size.width + 10,
         height: state.size.height + 10,
@@ -111,6 +115,7 @@ export default class ImageContainer extends Component {
           onTouchEnd={this.onMouseDown}
           role="button"
           tabIndex="0"
+          ref={(el) => { this.img = el; }}
         >
           <img src="/bharani.jpg" alt="Bharani" />
         </div>

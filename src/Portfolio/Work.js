@@ -10,10 +10,6 @@ import { Projects } from './Projects';
 import WorkItem from './WorkItem';
 
 class Work extends Component {
-  state = {
-
-  }
-
   componentDidMount() {
     imagesLoaded(this.isotopeContainer, () => {
       this.isotope = new Isotope(this.isotopeContainer, {
