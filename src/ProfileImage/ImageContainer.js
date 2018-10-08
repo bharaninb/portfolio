@@ -57,6 +57,10 @@ export default class ImageContainer extends Component {
   }
 
   animateBalloon = () => {
+    if (!this.audio) {
+      return;
+    }
+    this.audio.play();
     const newPos = this.getNewPosition();
     const rotationAngle = this.getRotationAngle(newPos);
 
@@ -90,9 +94,12 @@ export default class ImageContainer extends Component {
   }
 
   increaseBalloonSize = () => {
+    if (this.isBalloonBurstNeed()) {
+      this.burstBalloon();
+      return;
+    }
     this.setState(state => ({
       rotate: state.rotate,
-      // position: state.position,
       position: {
         top: state.position.top - 5,
         left: state.position.left - 5,
@@ -104,9 +111,38 @@ export default class ImageContainer extends Component {
     }));
   }
 
+  isBalloonBurstNeed = () => {
+    const { width, height } = this.state.size;
+
+    return width >= window.innerWidth || height >= window.innerHeight;
+  }
+
+  burstBalloon = () => {
+    this.burst.play();
+    clearInterval(this.timer);
+    clearInterval(this.animateTimer);
+    this.setState({
+      showBalloon: false,
+      rotate: 0,
+      position: {
+        top: 0,
+        left: 0,
+      },
+      size: {
+        width: 160,
+        height: 160,
+      },
+    });
+  }
+
   render() {
     return (
       <React.Fragment>
+        <audio ref={(el) => { this.burst = el; }}>
+          <track kind="captions" label="Burst" />
+          <source src="/burst.wav" type="audio/wav" />
+          <p>Your browser doesn&quote;t support HTML5 audio.</p>
+        </audio>
         <div
           className="profile-img"
           onMouseDown={this.onMouseDown}
@@ -120,13 +156,20 @@ export default class ImageContainer extends Component {
           <img src="/bharani.jpg" alt="Bharani" />
         </div>
         {this.state.showBalloon ?
-          <Balloon
-            rotate={this.state.rotate}
-            position={this.state.position}
-            size={this.state.size}
-            onMouseUp={this.onMouseUp}
-            onTouchEnd={this.onMouseUp}
-          />
+          <React.Fragment>
+            <audio loop ref={(el) => { this.audio = el; }}>
+              <track kind="captions" label="Deflate" />
+              <source src="/deflate.mp3" type="audio/mp3" />
+              <p>Your browser doesn&quote;t support HTML5 audio.</p>
+            </audio>
+            <Balloon
+              rotate={this.state.rotate}
+              position={this.state.position}
+              size={this.state.size}
+              onMouseUp={this.onMouseUp}
+              onTouchEnd={this.onMouseUp}
+            />
+          </React.Fragment>
         : null}
       </React.Fragment>
     );
