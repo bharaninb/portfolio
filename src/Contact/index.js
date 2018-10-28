@@ -17,7 +17,7 @@ export default class ContactContainer extends Component {
               <div className="row">
                 <div className="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.2s">
                   <FontAwesomeIcon icon={faPhone} />
-                  <p>+91 9500787221<br /> +91 7358274633</p>
+                  <p>+91 9500787221</p>
                 </div>
                 <div className="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.4s">
                   <FontAwesomeIcon icon={faMapMarkedAlt} />
@@ -25,7 +25,7 @@ export default class ContactContainer extends Component {
                 </div>
                 <div className="col-md-4 col-sm-4 contact-info wow fadeInUp" data-wow-delay="0.6s">
                   <FontAwesomeIcon icon={faLocationArrow} />
-                  <p>bharanidharan.nb@gmail.com<br />bharani2024@yahoo.in</p>
+                  <p>bharanidharan.nb@gmail.com</p>
                 </div>
               </div>
             </div>
